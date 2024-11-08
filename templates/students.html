@@ -1,0 +1,85 @@
+<!-- templates/students.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #6200ea;
+            color: white;
+            padding: 16px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        /* Container for cards */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            padding: 20px;
+        }
+
+        /* Card styles */
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 320px;
+            padding: 20px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Card content */
+        h2 {
+            font-size: 1.8em;
+            color: #6200ea;
+            margin: 0 0 10px;
+        }
+
+        p {
+            margin: 8px 0;
+            font-size: 1em;
+        }
+
+        .card-info {
+            color: #757575;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">Student Directory</div>
+    <div class="container">
+        {% for student in students %}
+        <div class="card">
+            <h2>{{ student.firstname }} {{ student.lastname }}</h2>
+            <p class="card-info"><strong>Email:</strong> {{ student.email }}</p>
+            <p class="card-info"><strong>Age:</strong> {{ student.age }}</p>
+            <p class="card-info"><strong>Bio:</strong> {{ student.bio }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

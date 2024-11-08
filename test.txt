@@ -1,0 +1,3 @@
+student_john= Student(firstname='John', lastname='Doe',
+                    email='jd@example.com', age=23,
+                    bio='Biology Student')
